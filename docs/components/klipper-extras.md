@@ -4,6 +4,11 @@
 [Klipper](https://www.klipper3d.org/) machine. It loads jobs into the daemon,
 calculates print bounds and coordinates gantry motion for each swath.
 
+!!! note "Not part of Klipper"
+    This plugin is maintained by Paintress, not by the Klipper project, and
+    is not affiliated with or endorsed by it. Report problems with the plugin
+    to Paintress rather than to Klipper.
+
 The plugin communicates with the daemon over TCP through `PaintressdClient`.
 The daemon handles data streaming and communication with the firmware.
 

@@ -13,6 +13,10 @@ This repository contains the documentation site. The five software modules
 live together in the Paintress code repository; the controller PCB is a
 separate KiCad project.
 
+> **Independent project.** Paintress is not affiliated with, endorsed by or
+> otherwise connected to the [Klipper](https://www.klipper3d.org/) project. It
+> uses Klipper as its motion platform and ships its own plugin for it.
+
 > **Experimental — not ready for use.** The code is under active development,
 > needs cleanup and organisation, and may change without notice. Hardware
 > validation is incomplete.

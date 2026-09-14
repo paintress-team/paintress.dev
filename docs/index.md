@@ -15,6 +15,11 @@ board.
     standard. Read the [Safety](safety.md) page before you build or power
     anything.
 
+!!! note "Independent project"
+    Paintress is not affiliated with, endorsed by or otherwise connected to
+    the [Klipper](https://www.klipper3d.org/) project. It uses Klipper as its
+    motion platform.
+
 ---
 
 ## What Paintress does
