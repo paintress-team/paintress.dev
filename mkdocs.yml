@@ -1,0 +1,118 @@
+site_name: Paintress
+site_description: >-
+  Open-source controller stack for piezoelectric inkjet printheads —
+  RIP, encoding, host orchestration, firmware and controller board.
+site_url: https://paintress.dev
+repo_name: paintress-team/paintress
+repo_url: https://github.com/paintress-team/paintress
+copyright: >-
+  Paintress is experimental and not safety-certified. Provided for
+  educational and research purposes only.<br>
+  Documentation text licensed under
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>;
+  site code under MIT. The code modules carry their own licenses.
+
+theme:
+  name: material
+  logo: assets/paintress.svg
+  favicon: assets/paintress.svg
+  language: en
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/paintress-team
+      name: Paintress on GitHub
+    - icon: simple/kofi
+      link: https://ko-fi.com/paintressteam
+      name: Support Paintress on Ko-fi
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Hardware:
+      - Controller board: hardware/controller-board.md
+  - How it works:
+      - System architecture: architecture.md
+      - Anatomy of a print: concepts/anatomy-of-a-print.md
+      - Swaths and passes: concepts/swaths-and-passes.md
+      - Firing and timing: concepts/firing-and-timing.md
+      - Double buffering: concepts/double-buffering.md
+      - Printhead data protocol: concepts/printhead-protocol.md
+      - RIP and halftoning: concepts/rip-and-halftoning.md
+  - User guide:
+      - Installation: guide/installation.md
+      - Configuration: guide/configuration.md
+      - Printing: guide/printing.md
+      - G-code reference: guide/gcode-reference.md
+      - Troubleshooting: guide/troubleshooting.md
+      - Maintenance: guide/maintenance.md
+  - Components:
+      - RIP & Encoder: components/rip-encoder.md
+      - Daemon: components/daemon.md
+      - Klipper extras: components/klipper-extras.md
+      - Firmware: components/firmware.md
+  - Reference:
+      - Serial protocol: reference/serial-protocol.md
+      - File formats: reference/file-formats.md
+      - Daemon TCP API: reference/tcp-api.md
+      - Glossary: reference/glossary.md
+  - Development:
+      - Building and testing: dev/building-and-testing.md
+      - Changing the protocol: dev/changing-the-protocol.md
+      - Design rationale: dev/design-rationale.md
+  - Safety: safety.md
