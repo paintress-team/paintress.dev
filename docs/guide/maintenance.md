@@ -27,7 +27,7 @@ diagonally, with a numbered ruler and guides every 10 nozzles.
 python rip/rip.py --target nozzle_check -o nz.json --dpi 630 --preview nz.png
 # encode and print nz.json, then read it by eye:
 #   find the gap -> follow the guide line up to the ruler -> read the number
-python tools/nozzle_check_from_scan.py --dead "C:89;M:4,7;K:58" \
+python tools/record_dead_nozzles.py --dead "C:89;M:4,7;K:58" \
        --profile rip/profiles/mymedia.json
 ```
 

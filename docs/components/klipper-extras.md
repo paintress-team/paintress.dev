@@ -4,6 +4,8 @@
 [Klipper](https://www.klipper3d.org/) machine. It loads jobs into the daemon,
 calculates print bounds and coordinates gantry motion for each swath.
 
+Source code: [paintress-team/paintress-klipper-extras](https://github.com/paintress-team/paintress-klipper-extras).
+
 !!! note "Not part of Klipper"
     This plugin is maintained by Paintress, not by the Klipper project, and
     is not affiliated with or endorsed by it. Report problems with the plugin

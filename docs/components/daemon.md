@@ -4,6 +4,8 @@
 service loads print jobs, manages USB serial communication and keeps the
 firmware supplied with swath data.
 
+Source code: [paintress-team/paintress-daemon](https://github.com/paintress-team/paintress-daemon).
+
 ## Responsibilities
 
 - Serving a line-delimited JSON (NDJSON) protocol over TCP, port `9000` by

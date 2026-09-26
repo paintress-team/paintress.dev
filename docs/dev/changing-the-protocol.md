@@ -5,6 +5,9 @@ definitions in `profiles/*.yaml`. These generate the C and Python bindings
 copied into the firmware, daemon and encoder. Update the sources and
 regenerate; do not edit generated copies.
 
+The protocol source lives in
+[paintress-team/paintress-protocol](https://github.com/paintress-team/paintress-protocol).
+
 ## The workflow
 
 1. **Edit the schema**: `schema/protocol.yaml`, which holds the enums,

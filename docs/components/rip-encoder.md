@@ -4,6 +4,8 @@
 print job. The RIP prepares the dot patterns; the encoder packs them for the
 firmware.
 
+Source code: [paintress-team/paintress-rip-encoder](https://github.com/paintress-team/paintress-rip-encoder).
+
 ## `rip/rip.py`, the raster image processor
 
 Loads an image, converts it to CMYK (or CMYK plus light cyan and light
@@ -48,8 +50,11 @@ protocol](../concepts/printhead-protocol.md).
 
 ## `tools/`, calibration and bench
 
-`calibrate_from_scan.py`, `nozzle_check_from_scan.py` and
-`col_align_from_scan.py` turn a printed target into calibration data.
+`calibrate_from_scan.py` builds the tone curves from a scan of the printed
+wedge; it is the only automatic calibration. The other two targets are read
+by eye: `record_dead_nozzles.py` stores the failed nozzles you read off the
+nozzle check, and `col_align_gaps.py` turns the `col_align` readings into
+encoder column gaps.
 
 ## Dependencies
 

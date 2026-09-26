@@ -1,10 +1,10 @@
 site_name: Paintress
 site_description: >-
-  Open-source controller stack for piezoelectric inkjet printheads —
+  Open-source controller stack for piezoelectric inkjet printheads:
   RIP, encoding, host orchestration, firmware and controller board.
 site_url: https://paintress.dev
-repo_name: paintress-team/paintress
-repo_url: https://github.com/paintress-team/paintress
+repo_name: paintress-team
+repo_url: https://github.com/paintress-team
 copyright: >-
   Paintress is experimental and not safety-certified. Provided for
   educational and research purposes only.<br>

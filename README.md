@@ -38,6 +38,7 @@ separate KiCad project.
 - [Glossary](#glossary)
 - [Project layout](#project-layout)
 - [Support](#support)
+- [Use of AI](#use-of-ai)
 - [License](#license)
 
 ## System architecture
@@ -289,11 +290,32 @@ Donations help fund ink, printheads, boards and bench testing. You can
 [support Paintress on Ko-fi](https://ko-fi.com/paintressteam), report issues,
 test hardware or contribute code and documentation.
 
+## Use of AI
+
+The architecture of Paintress was planned by people, and so was the reverse
+engineering behind it: probing the original controller with an oscilloscope
+and a logic analyser, and working out from those captures how the head is
+driven. The first tests and the first printed lines were also done by
+people, on the bench.
+
+AI tools were used in a limited way: to fix bugs, to help keep the stages of
+the pipeline consistent with each other, to write and edit the
+documentation, and most of all on the communication between the daemon and
+the firmware.
+
 ## License
 
-Licensing for the code modules is incomplete. `paintress-daemon/LICENSE` is
-MIT, and `paintress-klipper-extras/extras/paintress_head.py` declares GPLv3.
-Check each module's files before using, modifying or redistributing it.
+Every code module (the RIP/encoder, the protocol, the daemon, the Klipper
+extras and the firmware) is free software under the **GNU General Public
+License, version 3 or later** (`GPL-3.0-or-later`). Each module carries
+the full text in its own `LICENSE`, and every source file says so in an
+SPDX header. If you distribute a modified version, or a product that ships
+any of this code, the corresponding source has to be made available under
+the same license. Contributions are accepted under the Developer
+Certificate of Origin; see `CONTRIBUTING.md` in each module.
+
+The one exception is `paintress-firmware/pico_sdk_import.cmake`, a copy of
+the Raspberry Pi Pico SDK file, which keeps its BSD-3-Clause license.
 
 The documentation has separate licenses: CC BY 4.0 for the text and MIT for
 the site code. The published `paintress-team/paintress.dev` repository carries
