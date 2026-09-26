@@ -33,7 +33,7 @@ Paintress command error does not abort the Klipper session.
 | Command | Arguments | Description |
 |---|---|---|
 | `PAINTRESS_PURGE` | `CHANNEL=` (default `all`) `PULSES=` (default `10`) | Fire a channel's nozzles to clear or prime ink. |
-| `PAINTRESS_TEST_TRIGGER` | `PIN=` `MOVE=` `DISTANCE=` `TRIGGER_DISTANCE=` `SPEED=` `ACCEL=` `PULSE_MS=` (all optional) | Pulse the trigger `[output_pin]` for oscilloscope checks, without using the daemon or firmware. `MOVE=1` fires the edge at a colinear split in an X move, mirroring a real pass; `MOVE=0` pulses in place. |
+| `PAINTRESS_TEST_TRIGGER` | `PIN=` `MOVE=` `DISTANCE=` `TRIGGER_DISTANCE=` `SPEED=` `ACCEL=` `PULSE_MS=` (all optional) | Pulse the trigger `[output_pin]` for oscilloscope checks, without using the daemon or firmware. `MOVE=1` fires the edge at a colinear split in an X move, mirroring a real pass; `MOVE=0` pulses in place. Pass `PIN=` with your pin's name: without it the command looks for a pin named `trigger_print_pin` (a known issue). |
 | `PAINTRESS_SET_TRIGGER_DISTANCE` | `VALUE=` (mm, optional) | Read (no `VALUE`) or set the trigger distance at runtime. Lasts until restart. |
 
 ## The `CHANNEL` argument

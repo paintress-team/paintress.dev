@@ -5,8 +5,10 @@
     follows is a development workflow, not a finished product. Read
     [Safety](safety.md) first.
 
-This guide takes you from an image file to a print. Before starting, build the
-firmware with the Raspberry Pi Pico SDK and flash it to the controller board.
+This guide takes you from an image file to a print. It assumes the controller
+board already runs the Paintress firmware, which is not published yet. Clone
+the module repositories side by side; the commands below run from the folder
+that holds them.
 
 ## 1. RIP an image into halftoned passes
 

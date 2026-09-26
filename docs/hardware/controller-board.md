@@ -5,9 +5,9 @@ KiCad project. The adapter connects the controller to the printhead's flex
 connector.
 
 !!! info "Maintained separately"
-    The KiCad project is not part of the Paintress software repository.
-    The software repository contains the firmware. The pinout it
-    expects is in `paintress-firmware/config/board_config.h`.
+    The KiCad project is not in any of the Paintress repositories. The
+    pinout the firmware expects is in its `config/board_config.h`; the
+    firmware is not published yet.
 
 ## Origin and methodology
 
@@ -40,4 +40,4 @@ between power-on and that first instruction.
 
 The RP2350 GPIO assignments for the printhead interface (data bus, window
 selector, DAC, enable, start trigger) are defined in
-`paintress-firmware/config/board_config.h`.
+the firmware's `config/board_config.h` (not published yet).

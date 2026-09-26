@@ -24,8 +24,10 @@ Klipper plugin's `paintressd_client.py` is the reference client.
 
 `send_swath`, `set_timing`, `get_timing` and `dac_power` are retired. The
 pipeline handles streaming, each `print` carries its timing interval, and the
-engine controls the DAC. For direct serial debugging, use the firmware
-repository's `hw_tests/` tools.
+engine controls the DAC. The raw serial debugging tools
+(`hw_tests/`) come with the firmware, which is not published yet. The daemon
+repository has `hw_tests/pipeline_hw_test.py`, which checks the pipeline
+against a real board.
 
 Failed commands return `success: false`, an `error` code and a readable
 `message`. Common codes are listed below.

@@ -14,7 +14,7 @@ of three dithering algorithms:
 
 - Floyd–Steinberg error diffusion, the default,
 - blue noise, higher quality, optional, needs `scipy`,
-- ordered, Bayer or clustered-dot.
+- ordered, with a Bayer matrix.
 
 `--head` selects `c6n90` or `c4n180`, which defines the channels, nozzle pitch
 and band step. Use `--ink-map` to specify the ink connected to each slot.

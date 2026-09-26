@@ -1,9 +1,10 @@
 # System architecture
 
-Paintress has five software modules in one repository. Four handle image
-processing, motion, data transfer and firing. The fifth, `paintress-protocol`,
-defines the shared wire protocol and head profiles and generates their
-bindings. These interfaces must stay compatible across all modules. The
+Paintress has five software modules, each in its own repository under
+[paintress-team](https://github.com/paintress-team); the firmware is not
+published yet. Four handle image processing, motion, data transfer and
+firing. The fifth, `paintress-protocol`, defines the shared wire protocol and
+head profiles and generates their bindings. These interfaces must stay compatible across all modules. The
 controller PCB is a separate KiCad project.
 
 ```

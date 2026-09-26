@@ -57,8 +57,8 @@ rationale](../dev/design-rationale.md).
 Each column needs about 12 µs for the reference waveform and 33 µs for the
 next data-bus DMA transfer. The minimum interval is about 46 µs, equivalent to
 roughly 875 mm/s at 630 dpi. The default 200 mm/s is well below this rate. The
-plugin accepts derived intervals of 46–65535 µs; the firmware itself only
-rejects zero.
+plugin rejects a derived interval above 65535 µs and warns below 46 µs; the
+firmware itself only rejects zero.
 
 The [double buffer](double-buffering.md) spreads USB transfers across a swath.
 USB does not set the per-column firing interval, though the next swath must be

@@ -2,6 +2,10 @@
 
 ## Firmware
 
+!!! note "Firmware not published yet"
+    The firmware source is not public yet. The steps below are for when it
+    is released, or for anyone who already has a copy.
+
 Build the firmware with the Raspberry Pi Pico SDK and `PICO_SDK_PATH` set:
 
 ```sh

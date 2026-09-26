@@ -26,8 +26,9 @@ The protocol source lives in
    and C `memcmp`s them. `make compile-check` builds the header under the
    real ARM toolchain so that every `_Static_assert` fires.
 5. **Distribute.** `make sync` copies the canonical bindings into the repos
-   that vendor them, and `make sync-check` fails if any vendored copy has
-   drifted. Run it in CI and before a release.
+   that vendor them, found as `../paintress-*` next to `paintress-protocol`,
+   and `make sync-check` fails if any vendored copy has drifted. Run it
+   before a release.
 6. **Update the consumers**, meaning firmware dispatch and usb_link, daemon
    handlers and parsers, and the command tables in their READMEs.
 7. **Record it** in `CHANGELOG.md`.

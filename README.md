@@ -9,9 +9,10 @@ printheads. It converts images into print data, coordinates motion through
 Klipper, and drives the head with RP2350 firmware and a dedicated controller
 board.
 
-This repository contains the documentation site. The five software modules
-live together in the Paintress code repository; the controller PCB is a
-separate KiCad project.
+This repository contains the documentation site. Each of the five software
+modules has its own repository under
+[paintress-team](https://github.com/paintress-team); the firmware is
+not published yet. The controller PCB is a separate KiCad project.
 
 > **Independent project.** Paintress is not affiliated with, endorsed by or
 > otherwise connected to the [Klipper](https://www.klipper3d.org/) project. It
@@ -136,7 +137,8 @@ and [Configuration](docs/guide/configuration.md).
 
 ### `paintress-firmware`
 
-C firmware for a dual-core RP2350 with 8 MB of external PSRAM:
+C firmware for a dual-core RP2350 with 8 MB of external PSRAM (not
+published yet):
 
 - Core 0 handles USB, frame decoding, swath storage and host events.
 - Core 1 runs the print engine and purge operations.
@@ -229,7 +231,7 @@ regenerate all consumers together.
 
 ## End-to-end example
 
-First build and flash the firmware, install the daemon and plugin, and
+First flash the firmware (not published yet), install the daemon and plugin, and
 configure `[paintress]` with its trigger output pin. See
 [Installation](docs/guide/installation.md).
 
@@ -277,7 +279,7 @@ two compatibility fingerprints.
 
 | Location | Contents |
 |---|---|
-| Paintress code repository | The five software modules, internal `docs/` and module reviews in `analises/`. Each module has its own README. |
+| [paintress-team](https://github.com/paintress-team) | One repository per software module, each with its own README. The firmware is not published yet. |
 | `paintress-team/paintress.dev` | This documentation site, with pages in `docs/`, published at [paintress.dev](https://paintress.dev). |
 | Separate KiCad project | Controller and printhead adapter boards. |
 

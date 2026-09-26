@@ -6,6 +6,10 @@ encoder can run on that host or another computer.
 
 ## 1. Firmware (controller board)
 
+!!! note "Firmware not published yet"
+    The firmware source is not public yet. The steps below are for when it
+    is released, or for anyone who already has a copy.
+
 Build with the Raspberry Pi Pico SDK:
 
 ```sh
@@ -26,7 +30,7 @@ USB, including `LOG` frames that the daemon displays as text.
 
 ## 2. Daemon (host)
 
-The daemon requires Python 3.9 or newer and `pyserial`:
+The daemon requires Python 3.8 or newer and `pyserial`:
 
 ```sh
 cd paintress-daemon
@@ -38,26 +42,17 @@ Set `--head` to the fitted printhead. The board cannot identify it, so the
 daemon uses this setting to reject jobs made for another head.
 
 It listens on TCP port 9000 and opens the firmware serial port when asked.
-To run it as a service:
 
-```ini
-# /etc/systemd/system/paintressd.service
-[Unit]
-Description=Paintress daemon
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/python3 -m paintress_daemon --head c6n90
-WorkingDirectory=/home/pi/paintress-daemon
-Restart=on-failure
-User=pi
-
-[Install]
-WantedBy=multi-user.target
-```
+To run it as a service, use `paintress-daemon.service` from the daemon
+repository. It expects user `pi`, Klipper's Python in `~/klippy-env` and the
+`paintress_daemon` folder copied to `/home/pi`. Change `User`,
+`WorkingDirectory` and the Python path in `ExecStart` if your setup differs,
+and add `--head <name>` to `ExecStart`.
 
 ```sh
-sudo systemctl enable --now paintressd
+sudo cp paintress-daemon.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now paintress-daemon.service
 ```
 
 ## 3. Klipper plugin (host)
@@ -82,7 +77,8 @@ covered in [Configuration](configuration.md), then restart Klipper.
 
 ```sh
 cd paintress-rip-encoder
-pip install -r requirements.txt   # optional: numba (faster), scipy (blue noise)
+pip install -r requirements.txt
+pip install scipy                 # optional: better blue-noise texture
 ```
 
 The RIP and encoder run offline. Copy the resulting job files into the

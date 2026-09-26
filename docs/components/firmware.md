@@ -1,6 +1,9 @@
 # Firmware
 
-`paintress-firmware` runs on a dual-core RP2350 with 8 MB of external PSRAM
+`paintress-firmware` is not published yet. This page describes it so the
+rest of the stack makes sense.
+
+The firmware runs on a dual-core RP2350 with 8 MB of external PSRAM
 mapped through XIP. The default `PICO_BOARD` in `CMakeLists.txt` is
 `solderparty_rp2350_stamp_xl`. It runs at an overclocked 250 MHz, with the
 core voltage raised before the clock speed.
