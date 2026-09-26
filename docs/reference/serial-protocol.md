@@ -34,13 +34,13 @@ is 256. After a framing error, both sides scan byte by byte to resynchronise.
 | Code | Name | Parameters | Notes |
 |---|---|---|---|
 | `0x01` | `BEGIN_SWATH` | `swath_id(2)`, `line_count(4)` | Allocates a slot. The ACK carries `swath_id(2)`, `slot(1)`. |
-| `0x02` | `END_SWATH` | — | ACK carries `swath_id(2)`, `complete(1)`. An incomplete swath is discarded. |
+| `0x02` | `END_SWATH` | none | ACK carries `swath_id(2)`, `complete(1)`. An incomplete swath is discarded. |
 | `0x03` | `ARM` | `swath_id(2)`, `line_delay_us(2)` | Arms a received swath. It fires on the hardware start trigger and then clocks one column per `line_delay_us`. Each ARM supplies its own timing interval. |
-| `0x04` | `ABORT` | — | Electrical kill-switch. The DAC is de-energised and latched off; nothing else is interrupted, and a firing swath runs dry to its end with no ink leaving the head. While latched, `ARM` and `PURGE` are NACKed `DAC_LATCHED`. |
-| `0x05` | `GET_STATUS` | — | ACK carries 17 bytes of status: both slots, `receiving`, `printing`, `dac_latched`. |
-| `0x06` | `RESET` | — | A chip reboot. The firmware ACKs, drains the ACK, then reboots through the watchdog. USB drops and re-enumerates in a second or two; the host waits for this expected reconnect. Rebooting clears slots, the DAC latch and all other state. |
+| `0x04` | `ABORT` | none | Electrical kill-switch. The DAC is de-energised and latched off; nothing else is interrupted, and a firing swath runs dry to its end with no ink leaving the head. While latched, `ARM` and `PURGE` are NACKed `DAC_LATCHED`. |
+| `0x05` | `GET_STATUS` | none | ACK carries 17 bytes of status: both slots, `receiving`, `printing`, `dac_latched`. |
+| `0x06` | `RESET` | none | A chip reboot. The firmware ACKs, drains the ACK, then reboots through the watchdog. USB drops and re-enumerates in a second or two; the host waits for this expected reconnect. Rebooting clears slots, the DAC latch and all other state. |
 | `0x07` | `PURGE` | `channel(1)`, `pulses(1)` | Fires one channel's column `pulses` times. The channel is bounds-checked. |
-| `0x0C` | `IDENTIFY` | — | ACK carries `wire_id(2)`, `profile_hash(4)`, `fw_build(4)`, `boot_flags(1)`: the version and geometry handshake. In `boot_flags`, bit 0 means this boot came from a watchdog reboot, a commanded `RESET` included, and bit 1 means a genuine wedge recovery where the watchdog fired on its own. |
+| `0x0C` | `IDENTIFY` | none | ACK carries `wire_id(2)`, `profile_hash(4)`, `fw_build(4)`, `boot_flags(1)`: the version and geometry handshake. In `boot_flags`, bit 0 means this boot came from a watchdog reboot, a commanded `RESET` included, and bit 1 means a genuine wedge recovery where the watchdog fired on its own. |
 
 `0x08` and `0x09` (`SET_TIMING`, `GET_TIMING`), `0x0A` (`SET_HEAD_POWER`)
 and `0x0B` (`SET_DAC_POWER`) are retired and not reused.

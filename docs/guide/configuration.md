@@ -46,7 +46,7 @@ trigger_output_pin: paintress_trigger
 | Option | Default | Meaning |
 |---|---|---|
 | `socket_port` | `9000` | TCP port of the daemon, assumed to be on localhost. |
-| `serial_port` | — | Serial device the daemon opens to reach the board. Use a stable `/dev/serial/by-id/...` path. |
+| `serial_port` | a `/dev/serial/by-id/...` path | Serial device the daemon opens to reach the board. Use a stable `/dev/serial/by-id/...` path. |
 | `base_path` | `/home/pi/printer_data/paintress/` | Root directory for payloads. `PAINTRESS_SET_DIRECTORY` is sandboxed under it. |
 | `auto_connect` | `true` | Open the daemon socket and the board serial link once Klipper is ready. Best-effort: a daemon that is not up yet gets a warning, not an aborted startup. |
 | `x_offset`, `y_offset` | `0.0` | Distance **from** the printhead's reference point **to** the toolhead reference point, in mm. See the warning above. |
@@ -73,7 +73,7 @@ one setting selects the offsets for a different head.
 head: c4n180
 
 [paintress_head c4n180]
-# Offsets are ILLUSTRATIVE -- every carriage differs. Calibrate them.
+# Offsets are ILLUSTRATIVE: every carriage differs. Calibrate them.
 x_offset: 1.5
 y_offset: -2.25
 z_offset: 3.0

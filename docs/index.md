@@ -5,7 +5,7 @@ printheads**. It converts images into print data, coordinates printing with
 Klipper, and drives the printhead through dedicated firmware and a controller
 board.
 
-!!! warning "Status — Experimental / under active development"
+!!! warning "Status: experimental, under active development"
     Paintress is **not ready for use**. The code is not clean or organised
     and it changes without notice. Expect rough edges and breakage.
 

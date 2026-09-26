@@ -7,11 +7,11 @@ Paintress command error does not abort the Klipper session.
 
 | Command | Arguments | Description |
 |---|---|---|
-| `PAINTRESS_CONNECT_SOCKET` | — | Open the TCP connection to the daemon. |
-| `PAINTRESS_DISCONNECT_SOCKET` | — | Close the TCP connection. |
-| `PAINTRESS_CONNECT_SERIAL` | — | Ask the daemon to open the board's serial port (`serial_port`). |
-| `PAINTRESS_DISCONNECT_SERIAL` | — | Ask the daemon to close the serial port. |
-| `PAINTRESS_STATUS` | — | Report combined daemon and plugin status as JSON. |
+| `PAINTRESS_CONNECT_SOCKET` | none | Open the TCP connection to the daemon. |
+| `PAINTRESS_DISCONNECT_SOCKET` | none | Close the TCP connection. |
+| `PAINTRESS_CONNECT_SERIAL` | none | Ask the daemon to open the board's serial port (`serial_port`). |
+| `PAINTRESS_DISCONNECT_SERIAL` | none | Ask the daemon to close the serial port. |
+| `PAINTRESS_STATUS` | none | Report combined daemon and plugin status as JSON. |
 
 ## Payload
 
@@ -19,7 +19,7 @@ Paintress command error does not abort the Klipper session.
 |---|---|---|
 | `PAINTRESS_SET_DIRECTORY` | `DIRECTORY=` | Select the payload search directory, sandboxed under `base_path`. |
 | `PAINTRESS_OPEN_PAYLOAD` | `FILENAME=` | Load a job into the daemon and configure the firing interval. |
-| `PAINTRESS_CLOSE_PAYLOAD` | — | Unload the current job. |
+| `PAINTRESS_CLOSE_PAYLOAD` | none | Unload the current job. |
 
 ## Printing
 

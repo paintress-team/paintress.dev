@@ -17,7 +17,7 @@ separate KiCad project.
 > otherwise connected to the [Klipper](https://www.klipper3d.org/) project. It
 > uses Klipper as its motion platform and ships its own plugin for it.
 
-> **Experimental — not ready for use.** The code is under active development,
+> **Experimental, not ready for use.** The code is under active development,
 > needs cleanup and organisation, and may change without notice. Hardware
 > validation is incomplete.
 

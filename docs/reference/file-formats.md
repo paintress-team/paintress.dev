@@ -9,7 +9,7 @@ Each has a versioned JSON header and a packed binary file protected by CRC-32.
 halftoned pass as 1-bit bitmaps packed with `np.packbits`.
 
 ```jsonc
-// rip.json  (sibling: rip.bin)   -- the example is c6n90
+// rip.json (sibling: rip.bin), example for c6n90
 {
   "format": "paintress-rip",
   "format_version": "0.2.0",

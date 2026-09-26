@@ -7,6 +7,6 @@ venv/
 __pycache__/
 *.py[cod]
 
-# Private working notes -- never commit
+# Private working notes: never commit
 CLAUDE.local.md
 *.local.md
